@@ -4,13 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-list',
   standalone: true,
   imports: [],
-  template: `
-    <p>
-      list works!
-    </p>
-  `,
-  styles: ``
+  template: ` <p>list works!</p> `,
+  styles: ``,
 })
-export class ListComponent {
-
-}
+export class ListComponent {}

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -27,7 +27,9 @@ const MATERIAL_MODULES = [MatIconModule, MatButtonModule, MatToolbarModule];
   styles: ``,
 })
 export class ToolbarComponent {
-  public emitClick(): void {
-    console.log('Click');
+  onNewContactEvent = output<void>(); // output<void>: Es un decorador que se utiliza para emitir eventos, en este caso se utiliza para emitir un evento cunado se haga click en el botón 'Nuevo'.
+
+  emitClick(): void {
+    this.onNewContactEvent.emit(); // Emite el evento 'onNewContactEvent'.
   }
 }
